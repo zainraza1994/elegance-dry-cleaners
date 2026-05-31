@@ -3,19 +3,28 @@
 // --- Mobile nav ---
 const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
+const navOverlay = document.getElementById('navOverlay');
 
 function closeMenu() {
   mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  navOverlay.classList.remove('open');
   hamburger.setAttribute('aria-expanded', 'false');
   hamburger.setAttribute('aria-label', 'Open menu');
   mobileMenu.setAttribute('aria-hidden', 'true');
+  navOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
 }
 
 function openMenu() {
   mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  navOverlay.classList.add('open');
   hamburger.setAttribute('aria-expanded', 'true');
   hamburger.setAttribute('aria-label', 'Close menu');
   mobileMenu.setAttribute('aria-hidden', 'false');
+  navOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
 }
 
 if (hamburger && mobileMenu) {
@@ -32,19 +41,16 @@ if (hamburger && mobileMenu) {
     link.addEventListener('click', closeMenu);
   });
 
+  // Close on overlay click
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeMenu);
+  }
+
   // Close on ESC key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
       closeMenu();
       hamburger.focus();
-    }
-  });
-
-  // Close on outside click
-  document.addEventListener('click', e => {
-    const nav = document.getElementById('nav');
-    if (nav && !nav.contains(e.target) && mobileMenu.classList.contains('open')) {
-      closeMenu();
     }
   });
 }
