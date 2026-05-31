@@ -83,3 +83,19 @@ if (contactForm) {
     }
   });
 }
+
+// --- Floating WhatsApp button (show after scrolling past hero) ---
+const whatsappFloat = document.getElementById('whatsappFloat');
+
+if (whatsappFloat) {
+  const heroSection = document.getElementById('hero');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      whatsappFloat.classList.toggle('visible', !entry.isIntersecting);
+    },
+    { threshold: 0.1 }
+  );
+
+  if (heroSection) observer.observe(heroSection);
+}
