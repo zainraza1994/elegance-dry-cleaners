@@ -537,3 +537,43 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 .reviews__widget {
   min-height: 200px;
 }
+
+/* =============================================
+   LOCATION & HOURS
+   ============================================= */
+
+.location__inner {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.location__map iframe {
+  width: 100%;
+  display: block;
+}
+
+.location__address { margin-bottom: 36px; }
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.hours-table td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.hours-table td:first-child {
+  color: var(--text-dark);
+  padding-right: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .location__inner { grid-template-columns: 1fr; gap: 32px; }
+}
