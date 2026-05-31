@@ -117,7 +117,8 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 
 .btn:focus-visible,
 .nav__links a:focus-visible,
-.footer__links a:focus-visible {
+.footer__links a:focus-visible,
+.nav__hamburger:focus-visible {
   outline: 2px solid var(--warm-brown);
   outline-offset: 3px;
 }
@@ -143,6 +144,21 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 .section--navy  { background: var(--navy); color: var(--white); }
 
 .section__header { margin-bottom: 48px; }
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 24px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  z-index: 999;
+  transition: top 0.15s;
+}
+.skip-link:focus { top: 8px; }
 
 /* =============================================
    NAVIGATION
