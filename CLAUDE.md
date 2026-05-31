@@ -24,9 +24,11 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 
 ## Status
 
-All 13 build tasks complete + hero image redesigned. HEAD `9c24076`, pushed to `main`. GitHub Pages needs manual activation in repo Settings → Pages.
+All 13 build tasks complete + hero image redesigned + **mobile hero layout added (2026-06-01)**. Last pushed commit: `9c24076`. Session 4 changes to `index.html` + `styles.css` are **uncommitted** — commit before next session.
 
 **Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
+
+**Mobile hero (2026-06-01):** Cinematic strip layout at ≤900px. Full details in memory file. Demo file `hero-mobile-demo.html` at repo root — safe to delete.
 
 ## 10 client placeholders still to fill before go-live
 
