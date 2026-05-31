@@ -471,12 +471,11 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 
 .service-card__icon {
   color: var(--navy);
-  font-size: 1rem;
   margin-bottom: 16px;
   opacity: 0.5;
 }
 
-.service-card h3 {
+.service-card__title {
   font-size: 1.1rem;
   margin-bottom: 12px;
   color: var(--navy);
