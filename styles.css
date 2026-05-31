@@ -15,6 +15,7 @@
   --border:      #e8e2d9;
   --whatsapp:      #128C52;
   --whatsapp-dark: #0e6b3e;
+  --warm-gold:     #c9b97a;
 
   --font-serif:  'Cormorant Garamond', Georgia, serif;
   --font-sans:   'Inter', system-ui, -apple-system, sans-serif;
@@ -362,6 +363,7 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 
 .about__text h2 { margin-bottom: 20px; }
 .about__text p  { max-width: 540px; }
+.about__text p + p { margin-top: 16px; }
 
 .about__quote {
   background: var(--ivory);
@@ -562,13 +564,17 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
   font-size: 0.88rem;
 }
 
-.hours-table td {
+.hours-table td,
+.hours-table th {
   padding: 9px 0;
   border-bottom: 1px solid var(--border);
   color: var(--text-muted);
+  font-weight: normal;
+  text-align: left;
 }
 
-.hours-table td:first-child {
+.hours-table td:first-child,
+.hours-table th[scope="row"] {
   color: var(--text-dark);
   padding-right: 20px;
   font-weight: 500;
