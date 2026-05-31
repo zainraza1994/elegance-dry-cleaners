@@ -419,6 +419,7 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 }
 
 .habib__text h2 { margin-bottom: 20px; }
+.habib__text p + p { margin-top: 16px; }
 
 .habib__credentials {
   display: flex;
