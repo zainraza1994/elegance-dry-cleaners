@@ -348,3 +348,54 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
   .hero__image { order: -1; }
   .hero__image img { height: 300px; }
 }
+
+/* =============================================
+   ABOUT
+   ============================================= */
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about__text h2 { margin-bottom: 20px; }
+.about__text p  { max-width: 540px; }
+
+.about__quote {
+  background: var(--ivory);
+  border-left: 3px solid var(--navy);
+  padding: 32px;
+  position: relative;
+}
+
+.about__quote-mark {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--navy);
+  opacity: 0.15;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.about__quote p {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.about__quote-attr {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-brown);
+}
+
+@media (max-width: 768px) {
+  .about__inner { grid-template-columns: 1fr; gap: 32px; }
+}
