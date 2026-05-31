@@ -529,3 +529,11 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
   .specialist__inner { grid-template-columns: 1fr; gap: 32px; }
   .specialist__image { display: none; }
 }
+
+/* =============================================
+   REVIEWS
+   ============================================= */
+
+.reviews__widget {
+  min-height: 200px;
+}
