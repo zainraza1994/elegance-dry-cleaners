@@ -399,3 +399,52 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 @media (max-width: 768px) {
   .about__inner { grid-template-columns: 1fr; gap: 32px; }
 }
+
+/* =============================================
+   MEET HABIB
+   ============================================= */
+
+.habib__inner {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.habib__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.habib__text h2 { margin-bottom: 20px; }
+
+.habib__credentials {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.credential__num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.credential__text {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .habib__inner { grid-template-columns: 1fr; gap: 32px; }
+  .habib__photo img { aspect-ratio: 3 / 2; object-position: center top; }
+}
