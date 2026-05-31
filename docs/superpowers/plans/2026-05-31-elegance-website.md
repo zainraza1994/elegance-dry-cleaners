@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build a single-page premium website for Elegance Dry Cleaners — warm ivory + navy palette, 10 sections, plain HTML/CSS/JS, deployed as a static site.
+**Goal:** Build a single-page premium website for Elegance Dry Cleaners — warm ivory + navy palette, 10 sections, plain HTML/CSS/JS, deployed as a static site. Fully functional on both desktop and mobile.
 
-**Architecture:** Single `index.html` with all sections as semantic landmarks, one `styles.css` using CSS custom properties for the full design system, and `main.js` for mobile nav, smooth scroll offset, and contact form submission. No build step, no dependencies.
+**Architecture:** Single `index.html` with all sections as semantic landmarks, one `styles.css` using CSS custom properties for the full design system, and `main.js` for mobile nav, smooth scroll offset, and contact form submission. No build step, no dependencies. Every section is built mobile-first — desktop styles layer on top via `min-width` media queries where needed. All interactive elements meet the 44px minimum touch target size.
 
 **Tech Stack:** HTML5, CSS3 (custom properties, grid, flexbox), vanilla JavaScript ES6, Formspree (contact form → Gmail), Elfsight widget (Google Reviews), Google Maps iframe.
 
@@ -180,6 +180,11 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
   padding: 15px 24px;
 }
 .btn--whatsapp:hover { background: #1fba58; border-color: #1fba58; }
+
+/* Touch targets — all tappable elements minimum 44px tall */
+.btn          { min-height: 44px; }
+.nav__links a { min-height: 44px; display: inline-flex; align-items: center; }
+.footer__links a { min-height: 44px; display: inline-flex; align-items: center; }
 
 /* =============================================
    LAYOUT UTILITY
@@ -1506,12 +1511,93 @@ git commit -m "feat: footer with nav links and branding"
 
 ---
 
-## Task 12: Mobile & responsive polish pass
+## Task 12: Mobile & responsive polish — floating WhatsApp button + full pass
 
 **Files:**
-- Modify: `styles.css` (responsive tweaks)
+- Modify: `index.html` (add floating WhatsApp button)
+- Modify: `styles.css` (responsive tweaks + floating button)
+- Modify: `main.js` (show/hide floating button on scroll)
 
-- [ ] **Step 1: Open browser DevTools → toggle device toolbar**
+- [ ] **Step 1: Add the floating WhatsApp button to `index.html`**
+
+Add this just before the closing `</body>` tag (after the footer):
+
+```html
+<!-- Floating WhatsApp button — visible on mobile only -->
+<a
+  href="https://wa.me/44XXXXXXXXXX?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20a%20garment."
+  class="whatsapp-float"
+  id="whatsappFloat"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with us on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+```
+
+- [ ] **Step 2: Add floating button CSS to `styles.css`**
+
+```css
+/* =============================================
+   FLOATING WHATSAPP BUTTON (mobile only)
+   ============================================= */
+
+.whatsapp-float {
+  display: none; /* hidden on desktop */
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 200;
+  width: 56px;
+  height: 56px;
+  background: var(--whatsapp);
+  color: #fff;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+  transition: transform 0.2s, opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.whatsapp-float.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.whatsapp-float:hover { transform: scale(1.08); }
+
+@media (max-width: 768px) {
+  .whatsapp-float { display: flex; }
+}
+```
+
+- [ ] **Step 3: Add scroll-triggered visibility to `main.js`**
+
+```js
+// --- Floating WhatsApp button (show after scrolling past hero) ---
+const whatsappFloat = document.getElementById('whatsappFloat');
+
+if (whatsappFloat) {
+  const showAfter = document.getElementById('hero');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      whatsappFloat.classList.toggle('visible', !entry.isIntersecting);
+    },
+    { threshold: 0.1 }
+  );
+
+  if (showAfter) observer.observe(showAfter);
+}
+```
+
+The button appears once the user scrolls past the hero (where the WhatsApp CTA is already visible), so it never duplicates itself.
+
+- [ ] **Step 4: Open browser DevTools → toggle device toolbar**
 
 Test each breakpoint:
 - 375px (iPhone SE)
@@ -1519,14 +1605,13 @@ Test each breakpoint:
 - 768px (iPad)
 - 1024px (iPad landscape / small desktop)
 
-- [ ] **Step 2: Add responsive fixes at the bottom of `styles.css`**
+- [ ] **Step 5: Add responsive polish to `styles.css`**
 
 ```css
 /* =============================================
    RESPONSIVE POLISH
    ============================================= */
 
-/* Reduce section padding on mobile */
 @media (max-width: 768px) {
   :root { --section-pad: 56px 20px; }
 
@@ -1534,7 +1619,7 @@ Test each breakpoint:
   h2 { font-size: 1.6rem; }
 
   .hero { padding: 48px 0; }
-  .hero__ctas { flex-direction: column; }
+  .hero__ctas { flex-direction: column; align-items: stretch; }
   .hero__ctas .btn { text-align: center; }
 
   .hero__stats {
@@ -1546,6 +1631,15 @@ Test each breakpoint:
   .habib__credentials { gap: 20px; }
 
   .footer__links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+  /* Ensure all form inputs are comfortable to tap */
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem; /* prevents iOS auto-zoom on focus */
+    min-height: 44px;
+  }
+
+  .form-group textarea { min-height: 120px; }
 }
 
 /* Very small screens */
@@ -1555,24 +1649,37 @@ Test each breakpoint:
 }
 ```
 
-- [ ] **Step 3: Check each section at 375px — confirm**
+**Note: `font-size: 1rem` on inputs is critical** — iOS Safari auto-zooms the page when an input has `font-size < 16px`. Setting it to `1rem` (16px) prevents this.
 
-- [ ] Nav: hamburger only, no overflow
-- [ ] Hero: single column, image above, CTAs stack vertically
+- [ ] **Step 6: Check each section at 375px — confirm all pass**
+
+- [ ] Nav: hamburger only, no text overflow
+- [ ] Mobile menu: opens/closes cleanly, links have comfortable tap area
+- [ ] Hero: single column, image above, CTAs full-width stacked
 - [ ] About: single column, quote block full width
-- [ ] Meet Habib: photo full width, text below
-- [ ] Services: single column cards
-- [ ] Specialist: text only (image hidden), tags wrap
-- [ ] Reviews: Elfsight widget scrollable
-- [ ] Location: map full width, hours below
-- [ ] Contact: form full width, divider horizontal, WhatsApp button full width
-- [ ] Footer: centred, links wrap
+- [ ] Meet Habib: photo full width landscape crop, text below
+- [ ] Services: single column cards, text readable
+- [ ] Specialist: text only (image hidden on mobile), tags wrap naturally
+- [ ] Reviews: Elfsight widget fits and scrolls correctly
+- [ ] Location: map full width, hours table readable, no horizontal scroll
+- [ ] Contact: form fields full width, no zoom on focus, WhatsApp button full width
+- [ ] Footer: centred, links wrap to two rows
+- [ ] Floating WhatsApp button: appears after scrolling past hero, tappable, stays above footer
 
-- [ ] **Step 4: Commit**
+- [ ] **Step 7: Test on a real device if possible**
+
+Open the Netlify preview URL on your phone. Check:
+- No horizontal scroll anywhere
+- All text readable without pinch-zoom
+- Buttons easy to tap with thumb
+- Form submits correctly on mobile keyboard
+- WhatsApp button opens WhatsApp app directly
+
+- [ ] **Step 8: Commit**
 
 ```bash
-git add styles.css
-git commit -m "feat: mobile responsive polish pass"
+git add index.html styles.css main.js
+git commit -m "feat: floating WhatsApp button + full mobile responsive pass"
 ```
 
 ---
