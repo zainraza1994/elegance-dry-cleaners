@@ -1,0 +1,133 @@
+/* =============================================
+   DESIGN SYSTEM
+   ============================================= */
+
+:root {
+  --ivory:       #f8f5f0;
+  --white:       #ffffff;
+  --navy:        #1c3a5e;
+  --navy-dark:   #152d4a;
+  --warm-brown:  #8b7355;
+  --text-dark:   #1a1a1a;
+  --text-muted:  #555555;
+  --text-light:  #888888;
+  --border:      #e8e2d9;
+  --whatsapp:    #25D366;
+
+  --font-serif:  'Cormorant Garamond', Georgia, serif;
+  --font-sans:   'Inter', system-ui, -apple-system, sans-serif;
+
+  --max-width:   1100px;
+  --section-pad: 80px 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--ivory);
+  color: var(--text-dark);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+/* =============================================
+   TYPOGRAPHY UTILITIES
+   ============================================= */
+
+.label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--warm-brown);
+  margin-bottom: 12px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 16px; }
+h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); margin-bottom: 10px; }
+
+p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 26px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.22s, border-color 0.22s, color 0.22s;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.btn--primary:hover { background: var(--navy-dark); border-color: var(--navy-dark); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.btn--outline:hover { background: var(--navy); color: var(--white); }
+
+.btn--whatsapp {
+  background: var(--whatsapp);
+  color: var(--white);
+  border-color: var(--whatsapp);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-size: 0.75rem;
+  padding: 15px 24px;
+}
+.btn--whatsapp:hover { background: #1fba58; border-color: #1fba58; }
+
+/* Touch targets — all tappable elements minimum 44px tall */
+.btn          { min-height: 44px; }
+.nav__links a { min-height: 44px; display: inline-flex; align-items: center; }
+.footer__links a { min-height: 44px; display: inline-flex; align-items: center; }
+
+/* =============================================
+   LAYOUT UTILITY
+   ============================================= */
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section { padding: var(--section-pad); }
+.section--white { background: var(--white); }
+.section--ivory { background: var(--ivory); }
+.section--navy  { background: var(--navy); }
+
+.section__header { margin-bottom: 48px; }
