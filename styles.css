@@ -402,7 +402,7 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
     grid-template-rows: auto auto auto;
     grid-template-areas: "top" "image" "bottom";
     column-gap: 0;
-    row-gap: 48px;
+    row-gap: 0;
   }
 
   /* unwrap the content wrapper so its children become direct grid items */
@@ -422,6 +422,8 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
     display: block;
     grid-area: image;
     height: 260px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: -24px;
     margin-right: -24px;
     align-self: auto;
