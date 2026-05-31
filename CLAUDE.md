@@ -24,22 +24,13 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 
 ## Status
 
-All 13 build tasks complete + hero image redesigned + **mobile hero layout + spacing finalized (2026-06-01)**. Last local commit: `e280f53` — **not yet pushed to origin**. Working tree is clean (uncommitted: `hero-mobile-demo.html` untracked — safe to delete).
+All 13 build tasks complete + hero image redesigned + **mobile hero overlay layout (2026-06-01)**. Last local commit: `dc22a8c` — **not yet pushed to origin**. Working tree is clean.
 
 **Next section:** About / Our Story.
 
 **Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
 
-**Mobile hero (2026-06-01):** Cinematic strip layout at ≤900px — heading → image strip → body/CTAs/stats, all above the fold on iPhone 14 (390×844). Final spacing values in `@media (max-width: 900px)`:
-- `.hero__inner` `row-gap: 48px`
-- `.hero__content-top` `padding: 24px 0 0`
-- `.hero__heading` `font-size: 2.1rem`
-- `.hero__content-bottom` `padding: 0 0 16px`
-- `.hero__sub` `margin-bottom: 24px`
-- `.hero__ctas` `margin-bottom: 24px`
-- `.hero__stats` `padding-top: 24px`
-
-Demo file `hero-mobile-demo.html` at repo root — safe to delete.
+**Mobile hero (2026-06-01, session 6):** Full-bleed background image with text overlaid at ≤900px. `.hero__stats` is a direct child of `.hero__inner` (moved out of `.hero__content-bottom`). CSS Grid overlaps `.hero__content` (z-index 2) and `.hero__image` (z-index 1) in the same row-1 cell; stats sit in row-2 on the ivory background. Heading/sub/label are white; overlay gradient `0.28→0.60`. Fluid heading: `clamp(1.8rem, 7vw, 2.4rem)` — adapts to any screen size. Desktop: image `grid-column: 2; grid-row: 1/3` so it spans the content + stats rows.
 
 ## 10 client placeholders still to fill before go-live
 
