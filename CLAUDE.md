@@ -24,11 +24,22 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 
 ## Status
 
-All 13 build tasks complete + hero image redesigned + **mobile hero layout added (2026-06-01)**. Last pushed commit: `9c24076`. Session 4 changes to `index.html` + `styles.css` are **uncommitted** — commit before next session.
+All 13 build tasks complete + hero image redesigned + **mobile hero layout + spacing finalized (2026-06-01)**. Last local commit: `e280f53` — **not yet pushed to origin**. Working tree is clean (uncommitted: `hero-mobile-demo.html` untracked — safe to delete).
+
+**Next section:** About / Our Story.
 
 **Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
 
-**Mobile hero (2026-06-01):** Cinematic strip layout at ≤900px. Full details in memory file. Demo file `hero-mobile-demo.html` at repo root — safe to delete.
+**Mobile hero (2026-06-01):** Cinematic strip layout at ≤900px — heading → image strip → body/CTAs/stats, all above the fold on iPhone 14 (390×844). Final spacing values in `@media (max-width: 900px)`:
+- `.hero__inner` `row-gap: 48px`
+- `.hero__content-top` `padding: 24px 0 0`
+- `.hero__heading` `font-size: 2.1rem`
+- `.hero__content-bottom` `padding: 0 0 16px`
+- `.hero__sub` `margin-bottom: 24px`
+- `.hero__ctas` `margin-bottom: 24px`
+- `.hero__stats` `padding-top: 24px`
+
+Demo file `hero-mobile-demo.html` at repo root — safe to delete.
 
 ## 10 client placeholders still to fill before go-live
 
