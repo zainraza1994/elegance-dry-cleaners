@@ -48,3 +48,38 @@ if (hamburger && mobileMenu) {
     }
   });
 }
+
+// --- Contact form (Formspree) ---
+const contactForm = document.getElementById('contactForm');
+const formStatus  = document.getElementById('formStatus');
+const submitBtn   = document.getElementById('submitBtn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (res.ok) {
+        formStatus.textContent = 'Message sent — we’ll be in touch shortly.';
+        formStatus.className = 'form-status success';
+        contactForm.reset();
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      formStatus.textContent = 'Something went wrong. Please try WhatsApp or call us directly.';
+      formStatus.className = 'form-status error';
+    } finally {
+      submitBtn.textContent = 'Send Message';
+      submitBtn.disabled = false;
+    }
+  });
+}

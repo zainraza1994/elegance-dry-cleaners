@@ -577,3 +577,107 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 @media (max-width: 768px) {
   .location__inner { grid-template-columns: 1fr; gap: 32px; }
 }
+
+/* =============================================
+   CONTACT
+   ============================================= */
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 3fr auto 2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact__intro {
+  margin-bottom: 32px;
+}
+
+.contact__submit {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  transition: border-color 0.2s;
+  outline: none;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--navy);
+}
+
+.form-status {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  min-height: 20px;
+}
+.form-status.success { color: #1a7a3e; }
+.form-status.error   { color: #c0392b; }
+
+.contact__divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 60px;
+}
+
+.divider-line {
+  width: 1px;
+  flex: 1;
+  background: var(--border);
+}
+
+.contact__divider span {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact__whatsapp-title {
+  margin-bottom: 12px;
+}
+
+.contact__whatsapp-desc {
+  margin-bottom: 24px;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 900px) {
+  .contact__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contact__divider {
+    flex-direction: row;
+    padding-top: 0;
+  }
+  .divider-line { height: 1px; width: auto; flex: 1; }
+}
