@@ -5,6 +5,7 @@
 - [Memory: project status & what's left](../../../.claude/projects/-Users-zainraza-Desktop-elegance-dry-cleaners/memory/project_elegance_website.md)
 - [Design spec](docs/superpowers/specs/2026-05-31-elegance-website-design.md)
 - [Implementation plan](docs/superpowers/plans/2026-05-31-elegance-website.md)
+- [Hero image redesign spec](docs/superpowers/specs/2026-05-31-hero-image-redesign.md)
 
 ## Quick summary
 
@@ -19,13 +20,15 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 - [index.html](index.html) — entire single-page site
 - [styles.css](styles.css) — full design system (CSS custom properties, BEM)
 - [main.js](main.js) — nav, contact form, floating WhatsApp button
-- [assets/images/](assets/images/) — hero.jpg, specialist.jpg, habib.jpg (placeholder)
+- [assets/images/](assets/images/) — hero.jpg (real tailor photo), specialist.jpg, habib.jpg (placeholder)
 
 ## Status
 
-All 13 build tasks complete and pushed to `main` (HEAD `5fc581e`). GitHub Pages needs manual activation in repo Settings → Pages.
+All 13 build tasks complete + hero image redesigned. HEAD `9c24076`, pushed to `main`. GitHub Pages needs manual activation in repo Settings → Pages.
 
-## 11 client placeholders still to fill before go-live
+**Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
+
+## 10 client placeholders still to fill before go-live
 
 1. WhatsApp number — replace `44XXXXXXXXXX` everywhere in `index.html`
 2. Formspree endpoint — replace `YOUR-FORMSPREE-ENDPOINT` in contact form
@@ -37,7 +40,8 @@ All 13 build tasks complete and pushed to `main` (HEAD `5fc581e`). GitHub Pages 
 8. Habib's photo — swap `assets/images/habib.jpg` placeholder
 9. Verify `★ 4.9` Google rating is accurate
 10. Confirm opening hours (currently: Mon–Fri 8am–7pm, Sat 9am–6pm, Sun 10am–4pm)
-11. Update `og:image` to absolute URL once GitHub Pages is live
+
+> `og:image` placeholder removed — hero.jpg is now a real photo. Update to absolute URL (`https://zainraza1994.github.io/elegance-dry-cleaners/assets/images/hero.jpg`) once GitHub Pages is live.
 
 ## Design tokens
 
