@@ -83,7 +83,7 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.15s ease;
+  transition: background 0.22s, border-color 0.22s, color 0.22s;
   white-space: nowrap;
 }
 
@@ -587,7 +587,7 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
 .service-card {
   background: var(--white);
   padding: 36px 24px;
-  transition: background 0.2s, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s;
 }
 .service-card:hover { background: var(--ivory); }
 
@@ -931,6 +931,14 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
    ============================================= */
 
 @media (prefers-reduced-motion: no-preference) {
+  .btn {
+    transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.15s ease;
+  }
+
+  .service-card {
+    transition: background 0.2s, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
   /* Scroll entrance — fade + slide-up */
   .anim-hidden {
     opacity: 0;
