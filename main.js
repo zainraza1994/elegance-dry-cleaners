@@ -105,3 +105,22 @@ if (whatsappFloat) {
 
   if (heroSection) observer.observe(heroSection);
 }
+
+// --- Scroll entrance animations ---
+const animEls = document.querySelectorAll('.anim-hidden, .anim-hidden--fade');
+
+if (animEls.length) {
+  const entranceObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          entranceObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  animEls.forEach(el => entranceObserver.observe(el));
+}
