@@ -20,13 +20,13 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 - [index.html](index.html) — entire single-page site
 - [styles.css](styles.css) — full design system (CSS custom properties, BEM)
 - [main.js](main.js) — nav, contact form, floating WhatsApp button, scroll entrance observer
-- [assets/images/](assets/images/) — hero.jpg (real tailor photo), specialist.jpg, habib.jpg (placeholder)
+- [assets/images/](assets/images/) — hero.jpg (real tailor photo), specialist.jpg, habib.jpg (real photo added session 9)
 
 ## Status
 
 All 13 build tasks complete + hero redesigned + mobile hero overlay + animations + **client placeholders filled (2026-06-01, session 8)**. Last commit: `92e69ff` — **pushed to origin**. Working tree is clean.
 
-**Next:** Activate GitHub Pages (Settings → Pages → Branch: main / root). Then swap Habib's photo and set up Formspree.
+**Next:** Activate GitHub Pages (Settings → Pages → Branch: main / root). Then set up Formspree.
 
 **Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
 
@@ -40,7 +40,7 @@ All 13 build tasks complete + hero redesigned + mobile hero overlay + animations
 - Observer: `threshold: 0.1`, `rootMargin: '0px 0px -40px 0px'`. Elements already in viewport on load get `.is-visible` immediately via `getBoundingClientRect()` check.
 - Spec: `docs/superpowers/specs/2026-06-01-animations-design.md` · Plan: `docs/superpowers/plans/2026-06-01-animations.md`
 
-## Client placeholders — 2 remaining before go-live
+## Client placeholders — 1 remaining before go-live
 
 | # | Item | Status |
 |---|------|--------|
@@ -51,7 +51,7 @@ All 13 build tasks complete + hero redesigned + mobile hero overlay + animations
 | 5 | Google Maps embed | ✅ Northcote Rd embed in place |
 | 6 | Street address | ✅ 180 Northcote Rd, London SW11 6RE |
 | 7 | Phone number | ✅ 020 7738 2266 / `tel:+442077382266` |
-| 8 | Habib's photo | ⏳ drop real photo into `assets/images/habib.jpg` |
+| 8 | Habib's photo | ✅ real photo in `assets/images/habib.jpg` |
 | 9 | Google rating | ✅ updated to 4.8 |
 | 10 | Opening hours | ✅ Mon–Tue + Thu–Fri 8am–6pm, Wed 8am–1pm, Sat 9am–6pm, Sun closed |
 
