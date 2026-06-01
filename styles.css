@@ -303,7 +303,7 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
    HERO
    ============================================= */
 
-.hero { padding: var(--section-pad); overflow: hidden; }
+.hero { padding: 20px 0 80px; overflow: hidden; }
 
 .hero__inner {
   display: grid;
