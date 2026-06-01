@@ -24,9 +24,9 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 
 ## Status
 
-All 13 build tasks complete + hero redesigned + mobile hero overlay + **animations (2026-06-01, session 7)**. Last commit: `ff2b086` — **pushed to origin**. Working tree is clean.
+All 13 build tasks complete + hero redesigned + mobile hero overlay + animations + **client placeholders filled (2026-06-01, session 8)**. Last commit: `92e69ff` — **pushed to origin**. Working tree is clean.
 
-**Next section:** About / Our Story.
+**Next:** Activate GitHub Pages (Settings → Pages → Branch: main / root). Then swap Habib's photo and set up Formspree.
 
 **Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
 
@@ -40,18 +40,20 @@ All 13 build tasks complete + hero redesigned + mobile hero overlay + **animatio
 - Observer: `threshold: 0.1`, `rootMargin: '0px 0px -40px 0px'`. Elements already in viewport on load get `.is-visible` immediately via `getBoundingClientRect()` check.
 - Spec: `docs/superpowers/specs/2026-06-01-animations-design.md` · Plan: `docs/superpowers/plans/2026-06-01-animations.md`
 
-## 10 client placeholders still to fill before go-live
+## Client placeholders — 2 remaining before go-live
 
-1. WhatsApp number — replace `44XXXXXXXXXX` everywhere in `index.html`
-2. Formspree endpoint — replace `YOUR-FORMSPREE-ENDPOINT` in contact form
-3. Elfsight widget ID — replace `elfsight-app-YOUR-WIDGET-ID-HERE`
-4. Google Business Profile URL — replace `YOUR-GOOGLE-BUSINESS-PROFILE-URL`
-5. Google Maps embed URL — replace `PASTE-YOUR-GOOGLE-MAPS-EMBED-URL-HERE`
-6. Street address — replace `YOUR STREET ADDRESS` and `YOUR POSTCODE`
-7. Phone number — replace `+44 XXXX XXX XXX` and `tel:+44XXXXXXXXXX`
-8. Habib's photo — swap `assets/images/habib.jpg` placeholder
-9. Verify `★ 4.9` Google rating is accurate
-10. Confirm opening hours (currently: Mon–Fri 8am–7pm, Sat 9am–6pm, Sun 10am–4pm)
+| # | Item | Status |
+|---|------|--------|
+| 1 | WhatsApp number | ✅ `447380114114` |
+| 2 | Formspree endpoint | ⏳ needs formspree.io account + form setup |
+| 3 | Elfsight widget ID | ✅ `b574018f-b501-4ed9-9429-d315b7eb18d2` |
+| 4 | Google Business Profile URL | ✅ `maps.app.goo.gl/RMSuGHZqSt29aiML6` |
+| 5 | Google Maps embed | ✅ Northcote Rd embed in place |
+| 6 | Street address | ✅ 180 Northcote Rd, London SW11 6RE |
+| 7 | Phone number | ✅ 020 7738 2266 / `tel:+442077382266` |
+| 8 | Habib's photo | ⏳ drop real photo into `assets/images/habib.jpg` |
+| 9 | Google rating | ✅ updated to 4.8 |
+| 10 | Opening hours | ✅ Mon–Tue + Thu–Fri 8am–6pm, Wed 8am–1pm, Sat 9am–6pm, Sun closed |
 
 > `og:image` placeholder removed — hero.jpg is now a real photo. Update to absolute URL (`https://zainraza1994.github.io/elegance-dry-cleaners/assets/images/hero.jpg`) once GitHub Pages is live.
 
