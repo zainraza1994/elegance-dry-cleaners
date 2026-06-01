@@ -945,10 +945,13 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
     transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .anim-hidden.is-visible,
-  .anim-hidden--fade.is-visible {
+  .anim-hidden.is-visible {
     opacity: 1;
     transform: none;
+  }
+
+  .anim-hidden--fade.is-visible {
+    opacity: 1;
   }
 
   /* Mobile hero load animation — fires on page load, not scroll */
