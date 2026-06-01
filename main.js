@@ -119,8 +119,15 @@ if (animEls.length) {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
   );
 
-  animEls.forEach(el => entranceObserver.observe(el));
+  animEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('is-visible');
+    } else {
+      entranceObserver.observe(el);
+    }
+  });
 }
