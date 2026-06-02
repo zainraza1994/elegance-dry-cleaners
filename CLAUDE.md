@@ -26,7 +26,7 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 
 All 13 build tasks complete + hero redesigned + mobile hero overlay + animations + **client placeholders filled (2026-06-01, session 8)**. Last commit: `92e69ff` — **pushed to origin**. Working tree is clean.
 
-**Next:** Activate GitHub Pages (Settings → Pages → Branch: main / root). Then set up Formspree.
+**Next:** Activate GitHub Pages (Settings → Pages → Branch: main / root). All placeholders now filled — site is ready to go live.
 
 **Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
 
@@ -45,7 +45,7 @@ All 13 build tasks complete + hero redesigned + mobile hero overlay + animations
 | # | Item | Status |
 |---|------|--------|
 | 1 | WhatsApp number | ✅ `447380114114` |
-| 2 | Formspree endpoint | ⏳ needs formspree.io account + form setup |
+| 2 | Web3Forms access key | ✅ `c9cfcb04-6b60-45c4-9532-d58fb4a10543` → info@elegancedrycleaners.co.uk |
 | 3 | Elfsight widget ID | ✅ `b574018f-b501-4ed9-9429-d315b7eb18d2` |
 | 4 | Google Business Profile URL | ✅ `maps.app.goo.gl/RMSuGHZqSt29aiML6` |
 | 5 | Google Maps embed | ✅ Northcote Rd embed in place |

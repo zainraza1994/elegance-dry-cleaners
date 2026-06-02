@@ -55,7 +55,7 @@ if (hamburger && mobileMenu) {
   });
 }
 
-// --- Contact form (Formspree) ---
+// --- Contact form (Web3Forms) ---
 const contactForm = document.getElementById('contactForm');
 const formStatus  = document.getElementById('formStatus');
 const submitBtn   = document.getElementById('submitBtn');
