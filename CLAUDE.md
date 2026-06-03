@@ -24,9 +24,9 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 
 ## Status
 
-All 13 build tasks complete + hero redesigned + mobile hero overlay + animations + **client placeholders filled (2026-06-01, session 8)**. Last commit: `92e69ff` — **pushed to origin**. Working tree is clean.
+All 13 build tasks complete + hero redesigned + mobile hero overlay + animations + **all placeholders filled**. Last commit: `e1c8667` — **not yet pushed**. Working tree is clean.
 
-**Next:** Activate GitHub Pages (Settings → Pages → Branch: main / root). All placeholders now filled — site is ready to go live.
+**Next:** Push + activate GitHub Pages (Settings → Pages → Branch: main / root). Site is ready to go live — no remaining placeholders.
 
 **Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
 
