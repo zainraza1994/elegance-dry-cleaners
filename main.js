@@ -131,3 +131,58 @@ if (animEls.length) {
     }
   });
 }
+
+// --- Services swipe gallery ---
+(function () {
+  const track = document.getElementById('svcTrack');
+  if (!track) return;
+
+  const prev = document.getElementById('svcPrev');
+  const next = document.getElementById('svcNext');
+  const bar  = document.getElementById('svcBar');
+  const dots = Array.from(document.querySelectorAll('#svcDots i'));
+
+  const step = () => {
+    const card = track.querySelector('.svc-card');
+    return card ? card.getBoundingClientRect().width + 18 : 320;
+  };
+
+  const update = () => {
+    const padL = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+    const max  = track.scrollWidth - track.clientWidth;
+    const x    = track.scrollLeft;
+
+    if (prev) prev.disabled = x <= padL + 6;
+    if (next) next.disabled = x >= max - 6;
+
+    if (bar) {
+      const ratio   = max > 0 ? x / max : 0;
+      const visible = track.clientWidth / track.scrollWidth;
+      bar.style.width = Math.max(12, visible * 100) + '%';
+      bar.style.transform = `translateX(${ratio * (track.clientWidth - track.clientWidth * visible)}px)`;
+    }
+
+    const idx = Math.max(0, Math.round((x - padL) / step()));
+    dots.forEach((d, i) => d.classList.toggle('on', i === idx));
+  };
+
+  if (next) next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+
+  let down = false, startX = 0, startLeft = 0;
+  track.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    down = true; startX = e.clientX; startLeft = track.scrollLeft;
+    track.setPointerCapture(e.pointerId);
+  });
+  track.addEventListener('pointermove', (e) => {
+    if (down) track.scrollLeft = startLeft - (e.clientX - startX);
+  });
+  track.addEventListener('pointerup',     () => { down = false; });
+  track.addEventListener('pointercancel', () => { down = false; });
+
+  setTimeout(update, 60);
+})();

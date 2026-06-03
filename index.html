@@ -132,45 +132,84 @@
       </div>
     </section>
     <section class="services section section--white" id="services" aria-labelledby="services-heading">
-      <div class="inner">
-        <div class="section__header">
-          <p class="label anim-hidden">What We Offer</p>
-          <h2 id="services-heading" class="anim-hidden" style="transition-delay: 80ms">Our Services</h2>
-        </div>
-        <div class="services__grid">
-          <div class="service-card anim-hidden">
-            <div class="service-card__icon" aria-hidden="true">✦</div>
-            <h3 class="service-card__title">Dry Cleaning</h3>
-            <p>Professional cleaning for everyday suits, coats, dresses, and formal garments. Each piece is treated individually with the care it deserves.</p>
-          </div>
-          <div class="service-card anim-hidden" style="transition-delay: 80ms">
-            <div class="service-card__icon" aria-hidden="true">✦</div>
-            <h3 class="service-card__title">Tailoring &amp; Alterations</h3>
-            <p>Expert alterations, repairs, and bespoke tailoring. From taking in a waist to relining a jacket — done properly, by hand.</p>
-          </div>
-          <div class="service-card anim-hidden" style="transition-delay: 160ms">
-            <div class="service-card__icon" aria-hidden="true">✦</div>
-            <h3 class="service-card__title">Wedding Dress Care</h3>
-            <p>Specialist cleaning and preservation for bridal gowns. We understand what these garments mean and handle them with the utmost care.</p>
-          </div>
-          <div class="service-card anim-hidden" style="transition-delay: 240ms">
-            <div class="service-card__icon" aria-hidden="true">✦</div>
-            <h3 class="service-card__title">Designer &amp; Luxury Garments</h3>
-            <p>Canada Goose, Burberry, cashmere, silk, and leather. We have the experience and the process to care for your most valuable pieces.</p>
-          </div>
-          <div class="service-card anim-hidden" style="transition-delay: 320ms">
-            <div class="service-card__icon" aria-hidden="true">✦</div>
-            <h3 class="service-card__title">Household Items</h3>
-            <p>Duvets, curtains, blankets, and cushion covers. We clean what the machine at home cannot handle safely.</p>
-          </div>
-          <div class="service-card anim-hidden" style="transition-delay: 400ms">
-            <div class="service-card__icon" aria-hidden="true">✦</div>
-            <h3 class="service-card__title">Leather &amp; Suede</h3>
-            <p>Specialist cleaning and conditioning for leather jackets, suede coats, and accessories. Restored to their best.</p>
-          </div>
-        </div>
+  <div class="inner">
+    <div class="services__bar">
+      <div class="section__header" style="margin-bottom: 0;">
+        <p class="label anim-hidden">What We Offer</p>
+        <h2 id="services-heading" class="anim-hidden" style="transition-delay: 80ms">Our Services</h2>
       </div>
-    </section>
+      <div class="services__nav anim-hidden" style="transition-delay: 160ms">
+        <button class="services__arrow" id="svcPrev" aria-label="Previous service" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="services__arrow" id="svcNext" aria-label="Next service">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="services__track" id="svcTrack">
+      <article class="svc-card anim-hidden">
+        <img src="assets/images/services/01-dry-cleaning.jpg" alt="Dry cleaning at Elegance" loading="lazy" draggable="false">
+        <div class="svc-card__body">
+          <span class="svc-card__idx">01 — Service</span>
+          <h3 class="svc-card__name">Dry Cleaning</h3>
+          <p class="svc-card__text">Professional cleaning for everyday suits, coats, dresses, and formal garments. Each piece is treated individually with the care it deserves.</p>
+        </div>
+      </article>
+
+      <article class="svc-card anim-hidden" style="transition-delay: 60ms">
+        <img src="assets/images/services/02-tailoring.jpg" alt="Tailoring and alterations" loading="lazy" draggable="false">
+        <div class="svc-card__body">
+          <span class="svc-card__idx">02 — Service</span>
+          <h3 class="svc-card__name">Tailoring &amp; Alterations</h3>
+          <p class="svc-card__text">Expert alterations, repairs, and bespoke tailoring. From taking in a waist to relining a jacket — done properly, by hand.</p>
+        </div>
+      </article>
+
+      <article class="svc-card anim-hidden" style="transition-delay: 120ms">
+        <img src="assets/images/services/03-wedding.jpg" alt="Wedding dress care" loading="lazy" draggable="false">
+        <div class="svc-card__body">
+          <span class="svc-card__idx">03 — Service</span>
+          <h3 class="svc-card__name">Wedding Dress Care</h3>
+          <p class="svc-card__text">Specialist cleaning and preservation for bridal gowns. We understand what these garments mean and handle them with the utmost care.</p>
+        </div>
+      </article>
+
+      <article class="svc-card anim-hidden" style="transition-delay: 180ms">
+        <img src="assets/images/services/04-designer.jpg" alt="Designer and luxury garment care" loading="lazy" draggable="false">
+        <div class="svc-card__body">
+          <span class="svc-card__idx">04 — Service</span>
+          <h3 class="svc-card__name">Designer &amp; Luxury</h3>
+          <p class="svc-card__text">Canada Goose, Burberry, cashmere, silk, and leather. We have the experience and the process to care for your most valuable pieces.</p>
+        </div>
+      </article>
+
+      <article class="svc-card anim-hidden" style="transition-delay: 240ms">
+        <img src="assets/images/services/05-household.jpg" alt="Household item cleaning" loading="lazy" draggable="false">
+        <div class="svc-card__body">
+          <span class="svc-card__idx">05 — Service</span>
+          <h3 class="svc-card__name">Household Items</h3>
+          <p class="svc-card__text">Duvets, curtains, blankets, and cushion covers. We clean what the machine at home cannot handle safely.</p>
+        </div>
+      </article>
+
+      <article class="svc-card anim-hidden" style="transition-delay: 300ms">
+        <img src="assets/images/services/06-leather.jpg" alt="Leather and suede care" loading="lazy" draggable="false">
+        <div class="svc-card__body">
+          <span class="svc-card__idx">06 — Service</span>
+          <h3 class="svc-card__name">Leather &amp; Suede</h3>
+          <p class="svc-card__text">Specialist cleaning and conditioning for leather jackets, suede coats, and accessories. Restored to their best.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="services__dots" id="svcDots" aria-hidden="true">
+      <i class="on"></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="services__progress" aria-hidden="true"><i id="svcBar"></i></div>
+  </div>
+</section>
     <section class="specialist section section--navy" id="specialist" aria-labelledby="specialist-heading">
       <div class="inner">
         <div class="specialist__inner">
