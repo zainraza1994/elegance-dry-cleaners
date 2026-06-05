@@ -24,9 +24,11 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 
 ## Status
 
-All 13 build tasks complete + hero redesigned + mobile hero overlay + animations + **all placeholders filled**. Last commit: `e1c8667` — **not yet pushed**. Working tree is clean.
+All 13 build tasks complete + hero redesigned + mobile hero overlay + animations + **all placeholders filled** + **services gallery expanded to 9 cards**. Last commit: `5882970` — **not yet pushed**. Working tree is clean.
 
 **Next:** Push + activate GitHub Pages (Settings → Pages → Branch: main / root). Site is ready to go live — no remaining placeholders.
+
+**Services expansion (2026-06-05, session 11):** Gallery extended from 6 to 9 cards. New cards: Upholstery & Rug Cleaning (07), Commercial & Hospitality (08), Shoe Repairs (09). Card 01 (Dry Cleaning) updated to mention stain removal. Dot indicators extended to 9. Images: `07-upholstery.jpg`, `08-commercial.jpg`, `09-shoe-repair.jpg` (Unsplash free licence). Spec: `docs/superpowers/specs/2026-06-05-services-expansion-design.md` · Plan: `docs/superpowers/plans/2026-06-05-services-expansion.md`.
 
 **Hero image (2026-05-31):** Magazine split layout — image column bleeds to right viewport edge, full hero height. Photo: tailor at work by Yasamine June (Unsplash free licence, `assets/images/hero.jpg`).
 
