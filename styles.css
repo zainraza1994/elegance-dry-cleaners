@@ -622,7 +622,9 @@ p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
   display: flex;
   gap: 18px;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x proximity;
+  touch-action: pan-x;
   padding-bottom: 6px;
   margin: 0 -24px;
   padding-left: 24px;
