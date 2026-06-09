@@ -26,7 +26,9 @@ Premium single-page website for **Elegance Dry Cleaners**, Clapham, London. Owne
 
 All 13 build tasks complete + hero redesigned + mobile hero overlay + animations + **all placeholders filled** + **services gallery expanded to 9 cards**. Last commit: `5882970` — **not yet pushed**. Working tree is clean.
 
-**Next:** Push + activate GitHub Pages (Settings → Pages → Branch: main / root). Site is ready to go live — no remaining placeholders.
+**GitHub Pages:** Already activated and serving at `https://zainraza1994.github.io/elegance-dry-cleaners/`
+
+**Next:** Push to origin (`git push`) — that's all that's needed to go live. No remaining placeholders.
 
 **Services expansion (2026-06-05, session 11):** Gallery extended from 6 to 9 cards. New cards: Upholstery & Rug Cleaning (07), Commercial & Hospitality (08), Shoe Repairs (09). Card 01 (Dry Cleaning) updated to mention stain removal. Dot indicators extended to 9. Images: `07-upholstery.jpg`, `08-commercial.jpg`, `09-shoe-repair.jpg` (Unsplash free licence). Spec: `docs/superpowers/specs/2026-06-05-services-expansion-design.md` · Plan: `docs/superpowers/plans/2026-06-05-services-expansion.md`.
 
@@ -57,7 +59,7 @@ All 13 build tasks complete + hero redesigned + mobile hero overlay + animations
 | 9 | Google rating | ✅ updated to 4.8 |
 | 10 | Opening hours | ✅ Mon–Tue + Thu–Fri 8am–6pm, Wed 8am–1pm, Sat 9am–6pm, Sun closed |
 
-> `og:image` placeholder removed — hero.jpg is now a real photo. Update to absolute URL (`https://zainraza1994.github.io/elegance-dry-cleaners/assets/images/hero.jpg`) once GitHub Pages is live.
+> `og:image` is currently a relative path (`assets/images/hero.jpg`) — fine for testing. **Do not update until the custom domain `elegancedrycleaners.co.uk` is live.** Then set it to `https://elegancedrycleaners.co.uk/assets/images/hero.jpg` in one step alongside the DNS/custom domain setup.
 
 ## Design tokens
 
